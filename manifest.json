@@ -1,0 +1,12 @@
+{
+   "name": "UploadGPT",
+   "version": "1.0",
+   "description": "Sube archivos a ChatGPT.",
+   "manifest_version": 3,
+   "content_scripts": [{
+      "matches": [
+         "https://chat.openai.com/*"
+      ],
+      "js": ["upload.js"]
+   }]
+}
