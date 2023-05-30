@@ -64,10 +64,25 @@
   </head>
   <body>
     <h1 id="center">UploadGPT</h1>
-    <p id="subheading">Extensión que sirve para Subir archivos a ChatGPT y que te hable acerca de ellos</p>
+    <p id="subheading">Subir archivos a ChatGPT</p>
     <div id="buttons-container">
-      <a href="https://github.com/danucosukosuko/uploadgpt/releases" class="button">Descargar</a>
-      <a href="https://github.com/danucosukosuko/uploadgpt" class="button">Ver en Github</a>
+      <a href="https://github.com/danucosuko/uploadgpt/releases" class="button">Descargar</a>
+      <a href="https://github.com/danucosuko/uploadgpt" class="button">Ver en Github</a>
+      <button id="copy-button" class="button">Copiar texto</button>
     </div>
+
+    <script>
+      // Crea el botón para copiar texto
+      var copyButton = document.getElementById('copy-button');
+
+      // Agrega el evento clic al botón de copiar texto
+      copyButton.addEventListener('click', function() {
+        var textToCopy = "var uploadButton=document.createElement("button");uploadButton.innerHTML="SUBIR ARCHIVO";uploadButton.style.backgroundColor="green";uploadButton.style.color="white";uploadButton.style.position="fixed";uploadButton.style.bottom="20px";uploadButton.style.left="50%";uploadButton.style.transform="translateX(-50%)";uploadButton.style.borderRadius="20px";uploadButton.style.padding="10px 20px";uploadButton.style.fontSize="16px";uploadButton.style.zIndex="9999";console.log("UploadGPT Cargado con éxito");document.body.appendChild(uploadButton);function handleUploadButtonClick(){var e=document.createElement("input");e.type="file";e.addEventListener("change",function(e){var t=e.target.files[0],n=new FileReader;n.onload=function(e){var t=e.target.result,o=document.querySelectorAll('input[type="text"], textarea');for(var a=0;a<o.length;a++)o[a].value=t};n.readAsText(t)}),e.click()}uploadButton.addEventListener("click",handleUploadButtonClick);var versionButton=document.createElement("button");versionButton.innerHTML="VERSIÓN";versionButton.style.backgroundColor="green";versionButton.style.color="white";versionButton.style.position="fixed";versionButton.style.top="20px";versionButton.style.right="20px";versionButton.style.borderRadius="20px";versionButton.style.padding="10px 20px";versionButton.style.fontSize="16px";versionButton.style.zIndex="9999";document.body.appendChild(versionButton);function handleVersionButtonClick(){alert("UploadGPT, versión 1.0")}versionButton.addEventListener("click",handleVersionButtonClick);
+";
+        navigator.clipboard.writeText(textToCopy).then(function() {
+          alert('Prueba copiada al portapapeles. accede a la consola del navegador y haz un CTRL + V a la consola y dale a enter');
+        });
+      });
+    </script>
   </body>
 </html>
